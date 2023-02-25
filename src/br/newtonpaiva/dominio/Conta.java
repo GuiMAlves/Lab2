@@ -8,12 +8,24 @@ public class Conta {
         return 0.0;
     }
     public Double depositar(Double valor) {
-        return 0.0;
+        if(valor == null || valor <= 0)
+            throw  new IllegalArgumentException("Valor menor igual a zero");
+
+        saldo += valor;
+        return saldo;
     }
     public Integer getNumero() {
         return numero;
     }
     public void setNumero(Integer numero) {
         this.numero = numero;
+    }
+
+    public Double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(Double saldo) {
+        this.saldo = saldo;
     }
 }
